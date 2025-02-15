@@ -1,6 +1,6 @@
-name: CI Pipeline
+name: ESLint Check
 
-on:
+on: 
   push:
     branches:
       - main

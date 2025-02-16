@@ -1,0 +1,23 @@
+name: ESLint Check
+
+on: [push, pull_request]  # Runs on push and pull request events
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest  # Use latest Ubuntu environment
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3  # Pulls the code from your GitHub repository
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # Uses Node.js 18
+
+      - name: Install Dependencies
+        run: npm install  # Installs project dependencies
+
+      - name: Run ESLint
+        run: npx eslint .  # Runs ESLint on the entire project
+
